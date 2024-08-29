@@ -139,4 +139,10 @@ final class PostsApi extends HttpApi
 
         return $this->handleResponse($response, Status::class);
     }
+
+    public function addReaction(array $params)
+    {
+        $response = $this->httpPost(sprintf('/reactions'), $params);
+        return $this->handleResponse($response, Status::class);
+    }
 }
